@@ -9,6 +9,7 @@
 	let show_button = false;
 	let erenabled = false;
 	let button_title = 'Toggle Earrape!?';
+	let playback_speed = 1;
 
 	onMount(async () => {
 		video = document.getElementById('video');
@@ -81,6 +82,14 @@
 			}
 		}
 	}
+
+	function increasePlaybackSpeed(){
+	document.querySelector('video').playbackRate = playback_speed += 3;
+	playback_speed += 3;
+
+	// document.querySelector('video').play();
+
+	}
 </script>
 
 <main class="relative h-screen bg-black overflow-hidden">
@@ -103,6 +112,12 @@
 				class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded"
 			>
 				{button_title}
+			</button>
+			<button
+				on:click={increasePlaybackSpeed}
+				class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded"
+			>
+				{"Increase speed"}
 			</button>
 		</div>
 	{/if}
