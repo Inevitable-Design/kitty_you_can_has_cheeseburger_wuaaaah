@@ -84,8 +84,9 @@
 	}
 
 	function increasePlaybackSpeed(){
-	document.querySelector('video').playbackRate = playback_speed += 3;
-	playback_speed += 3;
+		playback_speed += 3;
+	document.querySelector('video').playbackRate = playback_speed;
+	
 
 	// document.querySelector('video').play();
 
